@@ -1,8 +1,8 @@
-cmake_minimum_required(VERSION 3.2)
+cmake_minimum_required(VERSION 3.21)
 
 project(giflib VERSION 5.1.2 LANGUAGES C)
 
-if(MSVC)
+if(MSVC AND PROJECT_IS_TOP_LEVEL)
   set(CMAKE_DEBUG_POSTFIX "d")
 endif()
 
@@ -19,6 +19,13 @@ add_library(giflib
   lib/openbsd-reallocarray.c
   lib/quantize.c
 )
+
+add_library(giflib::giflib ALIAS giflib)
+
+if (BUILD_SHARED_LIBS)
+  target_compile_definitions(giflib PRIVATE GIFLIB_DYNAMIC)
+  target_compile_definitions(giflib INTERFACE GIFLIB_DYNAMIC_IMPORT)
+endif ()
 
 target_include_directories(giflib
   PRIVATE
