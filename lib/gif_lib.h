@@ -140,11 +140,6 @@ typedef struct GraphicsControlBlock {
 
 /* Main entry points */
 GIFLIB_EXPORT
-GifFileType *EGifOpenFileName(const char *GifFileName,
-                              const bool GifTestExistence, int *Error);
-GIFLIB_EXPORT
-GifFileType *EGifOpenFileHandle(const int GifFileHandle, int *Error);
-GIFLIB_EXPORT
 GifFileType *EGifOpen(void *userPtr, OutputFunc writeFunc, int *Error);
 GIFLIB_EXPORT
 int EGifSpew(GifFileType * GifFile);
