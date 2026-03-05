@@ -293,7 +293,7 @@ extern int GifBitSize(int n);
 
 GIFLIB_EXPORT
 extern void *
-reallocarray(void *optr, size_t nmemb, size_t size);
+GifReallocarray(void *optr, size_t nmemb, size_t size);
 
 /******************************************************************************
  Support for the in-core structures allocation (slurp mode).              
