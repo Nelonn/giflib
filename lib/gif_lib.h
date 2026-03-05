@@ -211,10 +211,6 @@ int EGifPutCodeNext(GifFileType *GifFile,
 
 /* Main entry points */
 GIFLIB_EXPORT
-GifFileType *DGifOpenFileName(const char *GifFileName, int *Error);
-GIFLIB_EXPORT
-GifFileType *DGifOpenFileHandle(int GifFileHandle, int *Error);
-GIFLIB_EXPORT
 int DGifSlurp(GifFileType * GifFile);
 GIFLIB_EXPORT
 GifFileType *DGifOpen(void *userPtr, InputFunc readFunc, int *Error);    /* new one (TVT) */
